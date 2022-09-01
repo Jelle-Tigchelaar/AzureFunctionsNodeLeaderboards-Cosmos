@@ -33,7 +33,9 @@ function mongoConnect(mongooseInstance) {
     //above methods need to be executed because Mongo connection string should also contain the database name
     //whereas the one that gets created from the ARM template contains only the server related details, not the the database name
     //mongodb://node-scores:12345678==@node-scores.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
-
+    
+logError(connectionString);
+    
     //mongoose instance connection 
     mongooseInstance.Promise = global.Promise;
     return mongooseInstance.connect(connectionString, {
