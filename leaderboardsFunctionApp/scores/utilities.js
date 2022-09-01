@@ -26,9 +26,9 @@ function mongoConnect(mongooseInstance) {
     //get server connection string
     let connectionString = process.env.MONGODB_CONNECTION_STRING;
     //add the database name
-    const pos = connectionString.lastIndexOf('/');
-    const databaseName = process.env.NODE_ENV === 'test' ? config.databaseNameTest : config.databaseName;
-    connectionString = connectionString.substring(0, pos) + `/${databaseName}` + connectionString.substring(pos + 1);
+//    const pos = connectionString.lastIndexOf('/');
+//    const databaseName = process.env.NODE_ENV === 'test' ? config.databaseNameTest : config.databaseName;
+//    connectionString = connectionString.substring(0, pos) + `/${databaseName}` + connectionString.substring(pos + 1);
 
     //above methods need to be executed because Mongo connection string should also contain the database name
     //whereas the one that gets created from the ARM template contains only the server related details, not the the database name
